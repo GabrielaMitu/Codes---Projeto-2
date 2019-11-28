@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Calendar</title>
+  <link href = "assets/css/reset.css" rel = "stylesheet">
+  <link href = "assets/css/calendar.css" rel = "stylesheet">
+  <script src = 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js' ></script>
+  <script src = 'https://cdnjs.cloudflare.com/ajax/libs/jquery.cycle2/2.1.6/jquery.cycle2.core.min.js'></script>
+  <link href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css' rel = "stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Petit+Formal+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/
+  css?family=Limelight|Merriweather+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One|Monoton|Neucha|PT+Mono|Paytone+One&display=swap" rel="stylesheet">
+  <script src="assets/js/categoria.js"></script>
+  
+  
+</head> 
+<body class = 'tudo'>
+    <header class="header2">
+      <div class="nav2">
+          <p><a class = "h12" href="index.html">Friseur</a></p>
+          <nav class="menu">
+            <input id="menu__toggle" type="checkbox" class='menu__toggle' />
+            <label for="menu__toggle" class="menu__toggle-label">
+              <svg preserveAspectRatio='xMinYMin' viewBox='0 0 24 24'>
+                <path d='M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z' />
+              </svg>
+              <svg preserveAspectRatio='xMinYMin' viewBox='0 0 24 24'>
+                <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
+              </svg>
+            </label>
+            <ol class='menu__content'>
+              <li class="menu-item"><a href="index.html">Home</a></li>
+              <li class="menu-item">
+                <a href="#0">Index</a>
+                <ol class="sub-menu">
+                  <li class="menu-item"><a href="categoria.html">Clientes</a></li>
+                  <li class="menu-item"><a href="calendar.html">Calendário</a></li>
+                  <li class="menu-item"><a href="tintura.html">Catálogo de cores</a></li>
+                </ol>
+              </li>
+            </ol>
+          </nav>
+           <!-- <button class="dropbtn">Menu</button>
+                  <ul class="dropdown-content">
+                      {{#each portfolio}} 
+                       <li><a  href="categoria.html?key={{@key}}">{{this.categoria}}</a></li>
+                {{/each}}
+  
+                  </ul>-->
+          </div>
+  
+        </header>
+<script>
+    // fill the month table with column headings
+  function day_title(day_name) {
+      document.write("<div class='c-cal__col'>" + day_name + "</div>");
+    }
+    // fills the month table with numbers
+  function fill_table(month, month_length, indexMonth) {
+      day = 1;
+      // begin the new month table
+      document.write("<div class='c-main c-main-" + indexMonth + "'>");
+      //document.write("<b>"+month+" "+year+"</b>")
+  
+      // column headings
+      document.write("<div class='c-cal__row'>");
+      day_title("DOM");
+      day_title("SEG");
+      day_title("TER");
+      day_title("QUA");
+      day_title("QUI");
+      day_title("SEX");
+      day_title("SAB");
+      document.write("</div>");
+  
+      // pad cells before first day of month
+      document.write("<div class='c-cal__row'>");
+      for (var i = 1; i < start_day; i++) {
+        if (start_day > 7) {
+        } else {
+          document.write("<div class='c-cal__cel'></div>");
+        }
+      }
+  
+      // fill the first week of days
+      for (var i = start_day; i < 8; i++) {
+        document.write(
+          "<div data-day='2019-" +
+            indexMonth +
+            "-0" +
+            day +
+            "'class='c-cal__cel'><p>" +
+            day +
+            "</p></div>"
+        );
+        day++;
+      }
+      document.write("</div>");
+  
+      // fill the remaining weeks
+      while (day <= month_length) {
+        document.write("<div class='c-cal__row'>");
+        for (var i = 1; i <= 7 && day <= month_length; i++) {
+          if (day >= 1 && day <= 9) {
+            document.write(
+              "<div data-day='2019-" +
+                indexMonth +
+                "-0" +
+                day +
+                "'class='c-cal__cel'><p>" +
+                day +
+                "</p></div>"
+            );
+            day++;
+          } else {
+            document.write(
+              "<div data-day='2019-" +
+                indexMonth +
+                "-" +
+                day +
+                "' class='c-cal__cel'><p>" +
+                day +
+                "</p></div>"
+            );
+            day++;
+          }
+        }
+        document.write("</div>");
+        // the first day of the next month
+        start_day = i;
+      }
+  
+      document.write("</div>");
+    }
+  </script>
+  <header>
+    <div class="wrapper">
+      <div class="c-monthyear">
+      <div class="c-month">
+          <span id="prev" class="prev fa fa-angle-left" aria-hidden="true"></span>
+          <div id="c-paginator">
+            <span class="c-paginator__month">JANEIRO</span>
+            <span class="c-paginator__month">FEVEREIRO</span>
+            <span class="c-paginator__month">MARÇO</span>
+            <span class="c-paginator__month">ABRIL</span>
+            <span class="c-paginator__month">MAIO</span>
+            <span class="c-paginator__month">JUNHO</span>
+            <span class="c-paginator__month">JULHO</span>
+            <span class="c-paginator__month">AGOSTO</span>
+            <span class="c-paginator__month">SETEMEBRO</span>
+            <span class="c-paginator__month">OUTUBRO</span>
+            <span class="c-paginator__month">NOVEMBRO</span>
+            <span class="c-paginator__month">DEZEMBRO</span>
+          </div>
+          <span id="next" class="next fa fa-angle-right" aria-hidden="true"></span>
+        </div>
+        <span class="c-paginator__year">2019</span>
+      </div>
+      <div class="c-sort">
+        <a class="o-btn c-today__btn" href="index.html">Friseur</a>
+        <!--<a class="o-btn c-today__btn" href="javascript:;">HOJE</a>-->
+      </div>
+    </div>
+  </header>
+  <div class="wrapper">
+    <div class="c-calendar">
+      <div class="c-calendar__style c-aside">
+        <a class="c-add o-btn js-event__add" href="javascript:;">Adicionar evento <span class="fa fa-plus"></span></a>
+        <div class="c-aside__day">
+          <span class="c-aside__num"></span> <span class="c-aside__month"></span>
+        </div>
+        <div class="c-aside__eventList">
+        </div>
+      </div>
+      <div class="c-cal__container c-calendar__style">
+        <script>
+        
+        // CAHNGE the below variable to the CURRENT YEAR
+        year = 2019;
+  
+        // first day of the week of the new year
+        today = new Date("Janeiro 1, " + year);
+        start_day = today.getDay() + 1;
+        fill_table("Janeiro", 31, "01");
+        fill_table("Fevereiro", 28, "02");
+        fill_table("Março", 31, "03");
+        fill_table("Abril", 30, "04");
+        fill_table("Maio", 31, "05");
+        fill_table("Junho", 30, "06");
+        fill_table("Julho", 31, "07");
+        fill_table("Agosto", 31, "08");
+        fill_table("Setembro", 30, "09");
+        fill_table("Outubro", 31, "10");
+        fill_table("Novembro", 30, "11");
+        fill_table("Dezembro", 31, "12");
+        </script>
+      </div>
+    </div>
+  
+    <div class="c-event__creator c-calendar__style js-event__creator">
+      <a href="javascript:;" class="o-btn js-event__close">CLOSE <span class="fa fa-close"></span></a>
+      <form id="addEvent">
+        <input class = 'event_name' placeholder="Event name" type="text" name="name">
+        <input class = 'datinha' type="date" name="date">
+        <textarea class = 'notinhas' placeholder="Notes" name="notes" cols="30" rows="10"></textarea>
+        <select class = 'eventinhos' name="tags">
+            <option value="event">corte</option>
+            <option value="important">evento</option>
+            <option value="birthday">reuniao</option>
+            <option value="festivity">recesso</option>
+          </select>
+      </form>
+      <br>
+      <a href="javascript:;" class="o-btn js-event__save">SAVE <span class="fa fa-save"></span></a>
+    </div>
+  </div>
+  <script src = "assets/js/calendar.js"></script>
+<!--</body>-->
