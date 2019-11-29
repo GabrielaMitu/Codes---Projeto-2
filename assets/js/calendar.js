@@ -38,7 +38,7 @@ function defaultEvents(dataDay,dataName,dataNotes,classTag){
   date.addClass("event--" + classTag);
 }
 
-defaultEvents(today, 'Corte','Humberto Facebookson','important');
+defaultEvents(today, 'Corte','15:30 Humberto F.','important');
 defaultEvents('2017-12-25', 'MERRY CHRISTMAS','A lot of gift!!!!','festivity');
 defaultEvents('2017-05-04', "LUCA'S BIRTHDAY",'Another gifts...?','birthday');
 defaultEvents('2017-03-03', "MY LADY'S BIRTHDAY",'A lot of money to spent!!!!','birthday');
