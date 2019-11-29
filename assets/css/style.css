@@ -423,12 +423,12 @@
 
 .categ {
 	color: black;
+	font-family: "Paytone One", "Julius Sans One";
 }
 
 .section-menu-text {
 	font-size: 1rem;
 	font-family:  "Petit Formal Script", "Roboto Slab", sans-serif;
-	color: #191970;
 	margin: 0.5rem;
 
 }
