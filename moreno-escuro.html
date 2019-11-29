@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <title>Portfolio</title>
+  <link href="https://fonts.googleapis.com/css?family=Limelight|Merriweather+Sans&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css?family=Petit+Formal+Script&display=swap" rel="stylesheet">
+  <link href="assets/css/reset.css" rel="stylesheet">
+  <script src="assets/js/codes.js"></script>
+  <link href="assets/css/style.css" rel="stylesheet">
+  <script src="assets/js/projeto.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One|Monoton|Neucha|PT+Mono|Paytone+One&display=swap" rel="stylesheet">
+
+  <meta charset="UTF-8">
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+</head>
+
+<body class="tudo">
+  <header class = 'header1'>
+       <div class='nav'>
+        <p><a class = "h1" href="index.html">Portfolio</a></p>
+        {{#each portfolio}} 
+
+        <p><a class="submenu1" href="categoria.html?key={{@key}}">{{this.categoria}}</a></p> 
+        {{/each}}
+       </div>
+
+  </header>
+
+  <header class="header2">
+    <div class="nav2">
+        <p><a class = "h12" href="index.html">Friseur</a></p>
+        <nav class="menu">
+          <input id="menu__toggle" type="checkbox" class='menu__toggle' />
+          <label for="menu__toggle" class="menu__toggle-label">
+            <svg preserveAspectRatio='xMinYMin' viewBox='0 0 24 24'>
+              <path d='M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z' />
+            </svg>
+            <svg preserveAspectRatio='xMinYMin' viewBox='0 0 24 24'>
+              <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
+            </svg>
+          </label>
+          <ol class='menu__content'>
+            <li class="menu-item"><a href="index.html">Home</a></li>
+            <li class="menu-item">
+              <a href="#0">Index</a>
+              <ol class="sub-menu">
+                <li class="menu-item"><a href="categoria.html">Clientes</a></li>
+                <li class="menu-item"><a href="calendar.html">Calendário</a></li>
+                <li class="menu-item"><a href="tintura.html">Catálogo de cores</a></li>
+              </ol>
+            </li>
+          </ol>
+        </nav>
+         <!-- <button class="dropbtn">Menu</button>
+                <ul class="dropdown-content">
+                    {{#each portfolio}} 
+                     <li><a  href="categoria.html?key={{@key}}">{{this.categoria}}</a></li>
+              {{/each}}
+
+                </ul>-->
+        </div>
+
+      </header>
+      <div class = "gallery2">
+            <div class="titulom"> Moreno Escuro</div>
+      </div>
+
+      <div class = "gallery">
+        <div class="clipped-border">
+          <p><a href="asaa.html"><img src="assets/img/moreno1.jpg" alt="moreno"></a></p>
+        </div>
+        <div class="clipped-border">
+          <p><a href="asab.html"><img src="assets/img/moreno2.jpg" alt="moreno"></a></p>
+        </div>
+        <div class="clipped-border">
+          <p><a href="asac.html"><img src="assets/img/moreno3.jpg" alt="moreno"></a></p>
+        </div>
+          <div class="clipped-border">
+          <p><a href="asad.html"><img src="assets/img/moreno4.jpg" alt="moreno"></a></p>
+        </div>
+        <div class="clipped-border">
+          <p><a href="asae.html"><img src="assets/img/moreno5.jpg" alt="moreno"></a></p>
+        </div>
+        <div class = "shadow"></div>
+      </div>
+      
+      
