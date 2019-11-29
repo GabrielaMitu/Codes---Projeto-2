@@ -423,7 +423,7 @@
 
 .categ {
 	color: black;
-	font-family: "Roboto", "Julius Sans One";
+	font-family: 'PT Sans', Merriweather, serif;
 }
 
 .section-menu-text {
@@ -447,6 +447,10 @@
 	margin-top: 3rem;
 	font-size: 2rem;
 	font-family: Paytone One, "Julius Sans One";
+}
+
+.duvida {
+	font-family: 'PT Sans', Merriweather, serif;
 }
 
 .box {
